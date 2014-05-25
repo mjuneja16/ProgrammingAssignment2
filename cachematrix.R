@@ -39,12 +39,14 @@ cacheSolve <- function(x, ...)
 	}
 	data <- x$get()
 	valueDet<-det(data)
-	if(valueDet==0)									{
+	if(valueDet==0)
+	{
 		message("Determinant = 0 .i.e. It is a non-singular matrix.\nThus, Inverse of the Matrix cannot be computed.")
 	}
 	else
 	{
 		s<- solve(data, ...)
 		x$setInverse(s)
-		s									}
+		s
+	}
 }
