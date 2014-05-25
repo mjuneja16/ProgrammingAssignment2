@@ -1,7 +1,6 @@
 ##'cacheSolve' function calculates the inverse of the special "matrix" created with the 'makeCacheMatrix' function.
 
-##'makeCacheMatrix' function creates a special "matrix",
-##which is really a list containing a function to
+##'makeCacheMatrix' function creates a special "matrix", which is really a list containing a function to
 ##set the value of the matrix using the 'set' function,
 ##get the value of the matrix using the 'get' function,
 ##set the value of the inverse matrix using the 'setInverse' function and
@@ -22,8 +21,7 @@ makeCacheMatrix <- function(x = matrix())
 	     setInverse = setInverse,
 	     getInverse = getInverse)
 }
-##'cacheSolve' function calculates the inverse of the special "matrix" 
-##created with the 'makeCacheMatrix' function.
+##'cacheSolve' function calculates the inverse of the special "matrix" created with the 'makeCacheMatrix' function.
 ##At first, it checks the determinant of the matrix.
 ##valueDet is an numeric vector which indicates the determinant of the matrix.
 ##If determinant is zero, then it displays the message that the determinant is zero.
@@ -39,12 +37,14 @@ cacheSolve <- function(x, ...)
 		message("getting cached data")
 		return(s)
 	}
-	data <- x$get()								        valueDet<-det(data)
+	data <- x$get()
+	valueDet<-det(data)
 	if(valueDet==0)									{
 		message("Determinant = 0 .i.e. It is a non-singular matrix.\nThus, Inverse of the Matrix cannot be computed.")
 	}
 	else
 	{
-		s<- solve(data, ...)								x$setInverse(s)}
+		s<- solve(data, ...)
+		x$setInverse(s)
 		s									}
 }
