@@ -23,8 +23,8 @@ makeCacheMatrix <- function(x = matrix())
 }
 ##'cacheSolve' function calculates the inverse of the special "matrix" created with the 'makeCacheMatrix' function.
 ##At first, it checks the determinant of the matrix.
-##valueDet is an numeric vector which indicates the determinant of the matrix.
-##If determinant is zero, then it displays the message that the determinant is zero.
+##valueDet is a numeric vector which indicates the determinant of the matrix.
+##If determinant is zero, then it displays the message that the determinant is zero and the inverse cannot be computed.
 ##If determinant is non-zero, it checks if the inverse has already been calculated. 
 ##in this case, it gets the inverse from the cache and skips the computation.
 ##Otherwise,it calculates the inverse of the cached data and 
